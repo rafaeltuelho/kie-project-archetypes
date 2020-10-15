@@ -25,13 +25,14 @@ under the License.
 
   <fileSets> <!-- do not use filtered true, it will corrupt binary files -->
     <fileSet filtered="false" encoding="UTF-8">
-      <directory/>   
+      <directory/>
     </fileSet>
   </fileSets>
+
   <requiredProperties>
     <requiredProperty key="kieVersion">
       <!-- Enterprise version: 7.39.0.Final-redhat-00007-->
-      <defaultValue>7.44.0.Final</defaultValue>
+      <defaultValue>7.39.0.Final-redhat-00007</defaultValue>
     </requiredProperty>
   </requiredProperties>  
 </archetype-descriptor>
