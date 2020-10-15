@@ -130,7 +130,7 @@
         <artifactId>kie-maven-plugin</artifactId>
         <version>${kieVersion}</version>
         <extensions>true</extensions>
-      </plugin>
+      </plugin>      
     </plugins>
   </build>
 </project>
