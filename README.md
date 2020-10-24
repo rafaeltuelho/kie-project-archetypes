@@ -60,8 +60,6 @@ The generated project has the following structure:
 
 ## kie-process-archetype
 
-## kie-model-archetype
-
 ### Related blog post
 Read this blog post to see how you can use this archetype as project template on Business Central: 
 [Maven archetype support in Business Central](https://medium.com/kie-foundation/maven-archetype-support-in-business-central-b5fdf5e98556)
