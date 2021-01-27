@@ -32,7 +32,7 @@ under the License.
   <requiredProperties>
     <requiredProperty key="kieVersion">
       <!-- Enterprise version: 7.39.0.Final-redhat-00007-->
-      <defaultValue>7.39.0.Final-redhat-00007</defaultValue>
+      <defaultValue>7.44.0.Final-redhat-00006</defaultValue>
     </requiredProperty>
   </requiredProperties>  
 </archetype-descriptor>

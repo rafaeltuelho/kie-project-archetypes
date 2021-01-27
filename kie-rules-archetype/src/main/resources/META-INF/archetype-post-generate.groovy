@@ -1,19 +1,18 @@
-def moduleDir = new File(request.getOutputDirectory() + "/" + request.getArtifactId());
-def gitignore = new File(moduleDir, ".gitignore")
-def content = """
-.classpath
-.project
-.settings
-.factorypath
-.vscode
-.DS_Store
-*.iml
-.~lock*
-/bin/
-/target/
-""";
-
 def writeDotGitIgnore() {
+    content = """
+    .classpath
+    .project
+    .settings
+    .factorypath
+    .vscode
+    .DS_Store
+    *.iml
+    .~lock*
+    /bin/
+    /target/
+    """;
+    moduleDir = new File(request.getOutputDirectory() + "/" + request.getArtifactId());
+    gitignore = new File(moduleDir, ".gitignore")
     gitignore.setText(content, "UTF-8")
 }
 
