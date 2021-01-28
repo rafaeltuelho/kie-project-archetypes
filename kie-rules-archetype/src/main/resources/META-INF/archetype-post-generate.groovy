@@ -8,8 +8,8 @@ def writeDotGitIgnore() {
 .DS_Store
 *.iml
 .~lock*
-/bin/
-/target/
+bin/
+target/
     """;
     moduleDir = new File(request.getOutputDirectory() + "/" + request.getArtifactId());
     gitignore = new File(moduleDir, ".gitignore")
