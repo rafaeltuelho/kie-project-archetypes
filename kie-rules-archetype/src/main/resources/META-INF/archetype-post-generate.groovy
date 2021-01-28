@@ -1,15 +1,15 @@
 def writeDotGitIgnore() {
     content = """
-    .classpath
-    .project
-    .settings
-    .factorypath
-    .vscode
-    .DS_Store
-    *.iml
-    .~lock*
-    /bin/
-    /target/
+.classpath
+.project
+.settings
+.factorypath
+.vscode
+.DS_Store
+*.iml
+.~lock*
+/bin/
+/target/
     """;
     moduleDir = new File(request.getOutputDirectory() + "/" + request.getArtifactId());
     gitignore = new File(moduleDir, ".gitignore")
