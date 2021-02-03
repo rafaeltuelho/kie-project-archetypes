@@ -1,0 +1,35 @@
+apiVersion: app.kiegroup.org/v2
+kind: KieApp
+metadata:
+  name: '{{KIE_APP_NAME}}-ks'
+  namespace: {{NAMESPACE}}
+spec:
+  commonConfig:
+    adminPassword: dmAdmin
+    adminUser: dmAdmin
+  environment: rhdm-production-immutable
+  objects:
+    servers:
+    - env:
+      - name: KIE_SERVER_MODE
+        value: PRODUCTION
+      - name: KIE_SERVER_CONTAINER_DEPLOYMENT
+        value: '{{KIE_SERVER_CONTAINER_DEPLOYMENT}}'
+      - name: MAVEN_REPO_URL
+        value: '{{MAVEN_REPO_URL}}'
+      - name: MAVEN_REPO_USERNAME
+        value: '{{MAVEN_REPO_USERNAME}}'
+      - name: MAVEN_REPO_PASSWORD
+        value: '{{MAVEN_REPO_PASSWORD}}'
+      id: '{{KIE_APP_NAME}}-ks'
+      name: '{{KIE_APP_NAME}}-ks'
+      replicas: 1
+      resources:
+        limits:
+          cpu: "1"
+          memory: 2Gi
+        requests:
+          cpu: 500m
+          memory: 1Gi
+  upgrades: {}
+  useImageTags: true

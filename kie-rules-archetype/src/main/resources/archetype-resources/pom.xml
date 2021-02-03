@@ -13,7 +13,20 @@
     <maven.compiler.target>1.8</maven.compiler.target>
     <!--kieVersion>7.39.0.Final-redhat-00007</kieVersion -->
   </properties>
-
+  <!-- ENABLE THIS SECTION TO DEPLOY THE ARTIFACT TO YOUR MAVEN REPO
+  <distributionManagement>
+    <repository>
+      <id>nexus-ocp</id>
+      <url>${env.NEXUS_REPO}/repository/maven-releases/</url>
+      <layout>default</layout>
+    </repository>
+    <snapshotRepository>
+      <id>nexus-ocp</id>
+      <url>${env.NEXUS_REPO}/repository/maven-snapshots/</url>
+      <layout>default</layout>
+    </snapshotRepository>
+  </distributionManagement>
+  -->
   <dependencies>
     <dependency>
       <groupId>org.kie</groupId>
