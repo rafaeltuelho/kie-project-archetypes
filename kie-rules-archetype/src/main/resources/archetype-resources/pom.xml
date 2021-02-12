@@ -94,7 +94,7 @@
       <version>2.11.2</version>
       <scope>provided</scope>
     </dependency>
-    <!-- UNCOMMENT THIS IF YOU WANT TO RUN TEST SCENARIOS ON BC OR WITH 'mvn test'
+    <!-- UNCOMMENT THIS IF YOU WANT TO RUN TEST SCENARIOS ON BC OR WITH 'mvn test' -->
     <dependency>
       <groupId>org.drools</groupId>
       <artifactId>drools-scenario-simulation-api</artifactId>
@@ -107,7 +107,7 @@
       <version>${kieVersion}</version>
       <scope>test</scope>
     </dependency>
-    -->
+    <!-- -->
     <dependency> <!-- USE THIS IF YOU WANT TO RUN YOUT TEST SCENARIOS ON VSCODE WITH KOGITO (requires kie version >= 7.48) --> 
       <groupId>org.kie.kogito</groupId>
        <artifactId>kogito-scenario-simulation</artifactId>
