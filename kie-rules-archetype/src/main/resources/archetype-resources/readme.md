@@ -20,7 +20,7 @@ To deploy and run your kjar using a Spring Boot kie-server runtime, use the foll
 mvn archetype:generate \
    -DarchetypeGroupId=org.kie \
    -DarchetypeArtifactId=kie-service-spring-boot-archetype \
-   -DarchetypeVersion=7.45.0.Final \
+   -DarchetypeVersion=7.50.0.Final \
    -DappType=brm
 ```
 
@@ -68,17 +68,50 @@ and configure your Spring Boot app `kie-maven-plugin` in your pom.xml like this:
   </build>
 ```
 
+> If want to enable swagger Api Docs on your Spring Boot based application add these deps in your `pom.xml`
+
+```xml
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-rs-service-description-swagger</artifactId>
+      <version>3.2.6</version>
+    </dependency>
+    <dependency>
+      <groupId>io.swagger</groupId>
+      <artifactId>swagger-jaxrs</artifactId>
+      <version>1.5.15</version>
+      <exclusions>
+        <exclusion>
+          <groupId>javax.ws.rs</groupId>
+          <artifactId>jsr311-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>swagger-ui</artifactId>
+      <version>3.43.0</version>
+    </dependency>
+```
+
+and add this property on your `application.properties`
+```
+kieserver.swagger.enabled=true
+```
+
+To access the swagger ui: http://localhost:8090/rest/api-docs?url=http://localhost:8090/rest/swagger.json
+
 ## Executing your Decision Service
 after building and deploying your kjar into a kie-server you can test the API using the following payload samples:
 
 ### DMN Decision
-`GET`  http://localhost:8080/kie-server/services/rest/server/containers/<container-id>/dmn 
-> if running on Spring Boot use this url: http://localhost:8090/rest/server/server/containers/<container-id>/dmn
+`GET`  http://localhost:8080/kie-server/services/rest/server/containers/kie-rules-templates-1.0.0-SNAPSHOT/dmn 
+> if running on Spring Boot use this url: http://localhost:8090/rest/server/server/containers/kie-rules-templates-1.0.0-SNAPSHOT/dmn
 
 copy the `model-namespace` and the `model-name`
 
-`POST` http://localhost:8080/kie-server/services/rest/server/containers/<container-id>/dmn 
-> if running on Spring Boot use this url: http://localhost:8090/rest/server/server/containers/<container-id>/dmn
+`POST` http://localhost:8080/kie-server/services/rest/server/containers/kie-rules-templates-1.0.0-SNAPSHOT/dmn 
+> if running on Spring Boot use this url: http://localhost:8090/rest/server/server/containers/kie-rules-templates-1.0.0-SNAPSHOT/dmn
 
 Payload:
 ```json
@@ -127,8 +160,8 @@ Response:
 
 ### XLS decision Table rule base
 
-`POST` http://localhost:8080/kie-server/services/rest/server/containers/instances/<conatiner id>
-> if running on Spring Boot use this url: http://localhost:8090/rest/server/server/containers/instances/<conatiner id>
+`POST` http://localhost:8080/kie-server/services/rest/server/containers/instances/kie-rules-templates-1.0.0-SNAPSHOT
+> if running on Spring Boot use this url: http://localhost:8090/rest/server/server/containers/instances/kie-rules-templates-1.0.0-SNAPSHOT
 
 Payload:
 ```json
@@ -165,11 +198,6 @@ Payload:
             "fire-all-rules": {
                 "max": -1,
                 "out-identifier": "fired"
-            }
-        },
-        {
-            "get-objects": {
-                "out-identifier": "facts"
             }
         }
     ]
