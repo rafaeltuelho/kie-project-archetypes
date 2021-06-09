@@ -55,8 +55,8 @@ public class RulesBaseTest {
         return ksession;
     }
 
-    protected <T> Collection<T> getFactsFromKieSession(KieSession ksession, Class<T> classType) {
-        return (Collection<T>) ksession.getObjects(new ClassObjectFilter(classType));
+    protected <T> Collection<? extends Object> getFactsFromKieSession(KieSession ksession, Class<T> classType) {
+        return ksession.getObjects(new ClassObjectFilter(classType));
     }
 
     private KieContainer createContainer(){
