@@ -34,7 +34,7 @@ under the License.
       <!-- Enterprise version -->
       <!-- defaultValue>7.44.0.Final-redhat-00006</defaultValue -->
       <!-- Upstream version -->
-      <defaultValue>7.50.0.Final</defaultValue>
+      <defaultValue>7.52.0.Final</defaultValue>
     </requiredProperty>
   </requiredProperties>  
 </archetype-descriptor>
