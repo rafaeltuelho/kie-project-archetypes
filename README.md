@@ -58,7 +58,8 @@ The generated project has the following structure:
             └── logback-test.xml
 ```
 
-## kie-process-archetype
+## lombok-data-model-archetype
+Generates a simple data-model project leveraging Lombok Annotations to simplify your Pojo definition.
 
 ### Related blog post
 Read this blog post to see how you can use this archetype as project template on Business Central: 
