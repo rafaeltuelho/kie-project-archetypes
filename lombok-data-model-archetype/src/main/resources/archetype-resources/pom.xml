@@ -35,28 +35,26 @@
   </dependencies>
 
   <build>
-    <pluginManagement>
-        <plugins>
-          <plugin>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok-maven-plugin</artifactId>
-            <version>1.18.20.0</version>
-            <executions>
-              <execution>
-                <id>delombok</id>
-                <phase>generate-sources</phase>
-                <goals>
-                  <goal>delombok</goal>
-                </goals>
-                <configuration>
-                  <addOutputDirectory>true</addOutputDirectory>
-                  <verbose>true</verbose>
-                  <sourceDirectory>${project.basedir}/src/main/java/com/redhat/demos</sourceDirectory>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-    </pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok-maven-plugin</artifactId>
+          <version>1.18.20.0</version>
+          <executions>
+            <execution>
+              <id>delombok</id>
+              <phase>generate-sources</phase>
+              <goals>
+                <goal>delombok</goal>
+              </goals>
+              <configuration>
+                <addOutputDirectory>false</addOutputDirectory>
+                <verbose>true</verbose>
+                <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
   </build>
 </project>

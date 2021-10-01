@@ -1,7 +1,7 @@
 package com.redhat.demos;
 import static org.junit.Assert.assertTrue;
 
-import com.redhat.demos.model.Employee;
+import com.redhat.demos.model.DummyModel;
 
 import org.junit.Test;
 
@@ -16,8 +16,8 @@ public class AppTest
     @Test
     public void shouldAnswerWithTrue()
     {
-        Employee e = new Employee("John", "Smith");
+        DummyModel e = new DummyModel("John", "Smith");
         System.out.println(e);
-        assertTrue( true );
+        assertTrue( e.getFirstName().equals("John") );
     }
 }
