@@ -36,7 +36,7 @@
     <dependency>
       <groupId>org.kie</groupId>
       <artifactId>kie-api</artifactId>
-      <version></version>
+      <version>${kie.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
